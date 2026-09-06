@@ -1,7 +1,33 @@
+<div align="center">
 
-# 📊 LifeTrack
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=%F0%9F%93%8A+LifeTrack;Habit+Tracker+%2B+To-Do+List;%2B+Money+Tracker;All+in+One+Java+App" alt="Typing SVG" />
 
 ### All-in-One Habit Tracker, To-Do List & Money Tracker
+
+
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+
+
+
+
+![OOP](https://img.shields.io/badge/OOP-Design-blue?style=for-the-badge)
+
+
+
+
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+
+
+
+
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=2E9EF7&height=120&section=header" width="100%"/>
+
+</div>
 
 LifeTrack is a Java-based application that combines habit tracking, task management, and personal money tracking in one simple application.
 
@@ -250,3 +276,9 @@ git push origin feature/new-feature
 If you like this project, please consider giving the repository a ⭐ on GitHub!
 
 Your support is appreciated ❤️
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=2E9EF7&height=100&section=footer" width="100%"/>
+
+</div>
