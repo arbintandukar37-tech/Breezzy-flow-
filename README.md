@@ -51,7 +51,7 @@ Track your habits, manage your daily tasks, and monitor your finances — all in
 
 ### 5. Getting Started
 
-```markdown
+
 ## 🚀 Getting Started
 
 ### Requirements
