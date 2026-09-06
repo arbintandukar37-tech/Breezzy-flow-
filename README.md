@@ -71,12 +71,12 @@ java LifeTrack
 
 ### 6. Main Menu
 
-```markdown
+
 ## 🖥️ Main Menu
 
 When the application starts:
 
-```text
+
 =================================
           LIFETRACK
 =================================
@@ -90,14 +90,13 @@ When the application starts:
 Choose an option:
 ### 7. Habit Tracker
 
-```markdown
 ## 🏆 Habit Tracker
 
 The Habit Tracker helps users create and maintain daily habits.
 
 ### Example
 
-```text
+
 Your Habits:
 
 1. [✓] Exercise
@@ -108,14 +107,14 @@ Your Habits:
 
 ### 8. To-Do List
 
-```markdown
+
 ## ✅ To-Do List
 
 The To-Do List helps users organize and complete their daily tasks.
 
 ### Example
 
-```text
+
 Your Tasks:
 
 1. [✓] Complete Java assignment
@@ -126,14 +125,13 @@ Your Tasks:
 
 ### 9. Money Tracker
 
-```markdown
 ## 💰 Money Tracker
 
 The Money Tracker helps users manage their income and expenses.
 
 ### Example
 
-```text
+
 ========== BALANCE ==========
 
 Total Income : Rs. 5000.00
@@ -152,7 +150,7 @@ The Dashboard provides a quick overview of your productivity and finances.
 
 ### Example
 
-```text
+
 =================================
             DASHBOARD
 =================================
@@ -169,7 +167,6 @@ Balance: Rs. 6500.00
 
 ### 11. Java Concepts
 
-```markdown
 ## 🧠 Java Concepts Used
 
 This project demonstrates:
@@ -184,7 +181,10 @@ This project demonstrates:
 - Switch Statements
 - User Input
 - Input Validation
-- Object-Oriented Programming## ⚠️ Current Limitations
+- Object-Oriented Programming##
+
+
+ ⚠️ Current Limitations
 
 The current version stores data temporarily using Java ArrayList.
 
@@ -222,7 +222,7 @@ Contributions are welcome!
 
 Example:
 
-```bash
+
 git checkout -b feature/new-feature
 git add .
 git commit -m "Add new feature"
