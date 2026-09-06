@@ -61,7 +61,6 @@ Track your habits, manage your daily tasks, and monitor your finances — all in
 
 Check your Java version:
 
-```bash
 java --version
 
 git clone https://github.com/yourusername/LifeTrack.git
