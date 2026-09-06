@@ -1,0 +1,8 @@
+{
+  "name": "Breezy Flow",
+  "description": "Gamified all-in-one life ecosystem with habit tracking, task matrix, NRs finance tracking, and vibrant accountability notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
+
