@@ -22,7 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Breezy Flow"
-
+rootProject.name = "LifeQuest"
 
 include(":app")

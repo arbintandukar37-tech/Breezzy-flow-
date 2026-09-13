@@ -5,63 +5,62 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Modifier
+import androidx.activity.viewModels
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.ui.ZenithMainScreen
-import com.example.ui.ZenithViewModel
-import com.example.ui.theme.BreezyBg
-import com.example.ui.theme.MyApplicationTheme
+import com.example.breezyquest.ui.MainAppScreen
+import com.example.breezyquest.ui.viewmodel.MainViewModel
+import com.example.ui.theme.BreezyQuestTheme
+import com.example.ui.theme.ThemeMode
 
 class MainActivity : ComponentActivity() {
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    enableEdgeToEdge()
-    setContent {
-      MyApplicationTheme {
-        val viewModel: ZenithViewModel = viewModel()
 
-        val notificationPermissionLauncher = rememberLauncherForActivityResult(
-          contract = ActivityResultContracts.RequestPermission()
-        ) { _ ->
-          // Permission result handled
+    private val requestNotificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { _ ->
+            // Notification permission result handled
         }
 
-        LaunchedEffect(Unit) {
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    private val viewModel: MainViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        // Ask for notification permission on Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(
-                this@MainActivity,
-                Manifest.permission.POST_NOTIFICATIONS
-              ) != PackageManager.PERMISSION_GRANTED
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
             ) {
-              notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                requestNotificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
-          }
         }
 
-        Surface(
-          modifier = Modifier.fillMaxSize(),
-          color = BreezyBg
-        ) {
-
-          ZenithMainScreen(
-            viewModel = viewModel,
-            onRequestNotificationPermission = {
-              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-              }
+        setContent {
+            val themeMode by viewModel.themeMode.collectAsState()
+            val appTheme by viewModel.appTheme.collectAsState()
+            val isSystemDark = isSystemInDarkTheme()
+            val isDark = when (themeMode) {
+                ThemeMode.LIGHT -> false
+                ThemeMode.DARK -> true
+                ThemeMode.SYSTEM -> isSystemDark
             }
-          )
+
+            BreezyQuestTheme(darkTheme = isDark, appThemeStyle = appTheme) {
+                MainAppScreen(viewModel = viewModel)
+            }
         }
-      }
     }
-  }
+}
+
+@androidx.compose.runtime.Composable
+fun Greeting(name: String, modifier: androidx.compose.ui.Modifier = androidx.compose.ui.Modifier) {
+    androidx.compose.material3.Text(text = "Hello $name!", modifier = modifier)
 }
 

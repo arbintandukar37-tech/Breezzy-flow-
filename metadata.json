@@ -1,8 +1,7 @@
 {
-  "name": "Breezy Flow",
-  "description": "Gamified all-in-one life ecosystem with habit tracking, task matrix, NRs finance tracking, and vibrant accountability notifications.",
+  "name": "Breezy Quest",
+  "description": "All-in-one life manager combining money tracking, quests, habit flow, monthly earning targets, notes, calendar, and gamification.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
-
 

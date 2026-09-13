@@ -2,7 +2,6 @@ package com.example
 
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
-import com.example.ui.components.LiveConsistencyRing
 import com.example.ui.theme.MyApplicationTheme
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureRoboImage
@@ -22,20 +21,8 @@ class GreetingScreenshotTest {
 
   @Test
   fun greeting_screenshot() {
-    composeTestRule.setContent {
-      MyApplicationTheme {
-        LiveConsistencyRing(
-          completionRate = 0.75f,
-          streakDays = 7,
-          habitsDone = 3,
-          totalHabits = 4,
-          tasksDone = 5,
-          totalTasks = 6
-        )
-      }
-    }
+    composeTestRule.setContent { MyApplicationTheme { Greeting("Robolectric") } }
 
     composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/greeting.png")
   }
 }
-
